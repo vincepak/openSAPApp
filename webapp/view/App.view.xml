@@ -17,6 +17,7 @@ xmlns="sap.m" controllerName="opensap.myapp.controller.App">
 											src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Wikipedia_Hello_World_Graphic.svg/2000px-Wikipedia_Hello_World_Graphic.svg.png"
 											height="400px"/>
 										<Image src="http://www.nz.com/maps/nz-virtual-tour-map.gif" height="400px"/>
+										<Image src="http://qa-test-fsnz-images.s3.amazonaws.com/FAN/5001975_64.png" error=".onImageLoadError"/>
 									</pages>
 								</Carousel>
 								<Button text="{i18n>showHelloButtonText}"  press="onButtonSayHello"/>
@@ -24,6 +25,11 @@ xmlns="sap.m" controllerName="opensap.myapp.controller.App">
 							</IconTabFilter>
 							<IconTabFilter id="layouts" text="{i18n>layoutFilter}" key="layout">
 								<MessageStrip type="information" showIcon="true" text="here's a formlayout inside an Icontab bar..."/>
+								<ProgressIndicator
+				percentValue="{= ${vm>/NoOfPicking} * 100 / ${vm>/PickingTotal} }"
+				displayValue="EB:Picking {vm>/NoOfPicking}/{vm>/PickingTotal} items"
+				showValue="true"
+				state="{vm>/PickingIndicatorStatus}" />
 								<f:SimpleForm id="simpleFormChange" title="address" editable="true" 
 								class="editableForm sapUiSmallMarginTopBottom">
 									<f:content>
