@@ -19,7 +19,7 @@ xmlns="sap.m" controllerName="opensap.myapp.controller.App">
 				<HBox justifyContent="Centre">
 									<ProgressIndicator
 				percentValue="{= ${vm>/NoOfPicking} * 100 / ${vm>/PickingTotal} }"
-				displayValue="EB:Picking {vm>/NoOfPicking}/{vm>/PickingTotal} items"
+				displayValue="Picking {vm>/NoOfPicking}/{vm>/PickingTotal} items"
 				showValue="true"
 				state="Warning"
 				enabled="true"
